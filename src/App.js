@@ -83,7 +83,13 @@ const App = () => {
 
     return (
         <div className="app">
-            <ImageUpload />
+            {
+                user?.displayName ? (
+                    <ImageUpload username={user.displayName} />
+                ) : (
+                    <h3>Please Login...</h3>
+                )
+            }
             {/* Modal for SIGN UP button */}
             <Modal
                 open={open}
