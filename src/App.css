@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    background-color: #FAFAFA;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__header {
+    object-fit: contain;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app__headerImage {
+    width: 110px;
+    padding: 5px 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__signup{
+    display: flex;
+    flex-direction: column;
 }
