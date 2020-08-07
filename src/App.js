@@ -55,7 +55,7 @@ const App = () => {
     }, [username, email]);
 
     useEffect(() => {
-        db.collection('posts').onSnapshot(snapshot => {
+        db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
             setPosts(snapshot.docs.map(doc => ({
                 id: doc.id,
                 post: doc.data()

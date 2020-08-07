@@ -21,9 +21,10 @@ function ImageUpload({ username }) {
             "state_changed",
             (snapshot) => {
                 // Percentage for progress bar
-                const progress = Math.random(
-                    snapshot.bytesTransferred / snapshot.totalBytes * 100
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                 );
+                console.log(progress);
                 setProgress(progress);
             },
             (error) => {
