@@ -11,14 +11,21 @@
 }
 
 .app__header {
+    display: flex;
+    justify-content: space-between;
     object-fit: contain;
     background-color: white;
     border-bottom: 1px solid lightgray;
 }
 
 .app__headerImage {
+    object-fit: contain;
     width: 110px;
     padding: 5px 20px;
+}
+
+.app__posts{
+    padding: 10px;
 }
 
 .app__signup{
