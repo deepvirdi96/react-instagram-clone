@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
 import ImageUpload from './Components/ImageUpload/ImageUpload';
+import InstagramEmbed from 'react-instagram-embed';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -163,11 +164,28 @@ const App = () => {
 
             {/* Render Posts */}
             <div className="app__posts">
-                {
-                    posts.map(({ id, post }) => {
-                        return (<Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL} />);
-                    })
-                }
+                <div className="app__postsLeft">
+                    {
+                        posts.map(({ id, post }) => {
+                            return (<Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageURL={post.imageURL} />);
+                        })
+                    }
+                </div>
+                <div className="app__postsRight">
+                    <InstagramEmbed
+                        url="https://www.instagram.com/p/B47P6UWHjd2/?utm_source=ig_web_copy_link"
+                        maxWidth={320}
+                        hideCaption={false}
+                        containerTagName='div'
+                        protocol=''
+                        injectScript
+                        onLoading={() => { }}
+                        onSuccess={() => { }}
+                        onAfterRender={() => { }}
+                        onFailure={() => { }}
+                    />
+                </div>
+
             </div>
 
             {/* Image Upload */}
@@ -175,9 +193,11 @@ const App = () => {
                 user?.displayName ? (
                     <ImageUpload username={user.displayName} />
                 ) : (
-                        <h3>Please Login...</h3>
+                        <center><h3>Login to upload a image</h3></center>
                     )
             }
+
+
         </div>
     );
 }

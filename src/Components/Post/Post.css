@@ -2,8 +2,12 @@
     max-width: 500px;
     border: 1px solid lightgray;
     margin-bottom: 30px;
+    background: white;
 }
-
+.post h3{
+    font-weight: 600;
+    font-size: 16px;
+}
 .post__header {
     display: flex;
     align-items: center;
@@ -23,5 +27,42 @@
 
 .post__text {
     font-weight: normal;
-    padding: 5px;
+    padding: 0px 10px;
+    font-size: 15px;
+}
+
+.post__text>strong {
+    font-weight: 600;
+}
+
+.post__commentBox {
+    display: flex;
+    margin-top: 10px;
+    
+}
+
+.post__comments {
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.post__comments strong{
+    font-weight: 600;
+}
+
+.post__commentInput {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-top: 1px solid lightgrey;
+}
+
+.post__button {
+    flex: 0;
+    border: none;
+    border-top: 1px solid lightgrey;
+    padding: 0px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #2479ce
 }
