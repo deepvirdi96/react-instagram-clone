@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Go test the app ! chop-chop [Instagram Clone](https://instagram-clone-react-6a5d7.web.app/).
 
 ## Instagram React Clone 
 
