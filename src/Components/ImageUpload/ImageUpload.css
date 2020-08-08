@@ -1,0 +1,11 @@
+.imageupload{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin : 10px auto 10px auto;
+    background-color: whitesmoke;
+}
+
+.imageupload__progressbar {
+    width: 100%;
+}

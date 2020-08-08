@@ -83,13 +83,6 @@ const App = () => {
 
     return (
         <div className="app">
-            {
-                user?.displayName ? (
-                    <ImageUpload username={user.displayName} />
-                ) : (
-                    <h3>Please Login...</h3>
-                )
-            }
             {/* Modal for SIGN UP button */}
             <Modal
                 open={open}
@@ -156,19 +149,34 @@ const App = () => {
 
             <div className="app__header">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram Logo" className="app__headerImage" />
+
+                {/* Login and logout buttons */}
+                {user ? (
+                    <Button onClick={() => (auth.signOut())}>Logout</Button>
+                ) : (
+                        <div className="app__loginContainer">
+                            <Button onClick={() => (setOpen(true))}>Sign Up</Button>
+                            <Button onClick={() => (setOpenSignIn(true))}>Sign In</Button>
+                        </div>
+                    )}
             </div>
-            {user ? (
-                <Button onClick={() => (auth.signOut())}>Logout</Button>
-            ) : (
-                    <div className="app__loginContainer">
-                        <Button onClick={() => (setOpen(true))}>Sign Up</Button>
-                        <Button onClick={() => (setOpenSignIn(true))}>Sign In</Button>
-                    </div>
-                )}
+
+            {/* Render Posts */}
+            <div className="app__posts">
+                {
+                    posts.map(({ id, post }) => {
+                        return (<Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL} />);
+                    })
+                }
+            </div>
+
+            {/* Image Upload */}
             {
-                posts.map(({ id, post }) => {
-                    return (<Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL} />);
-                })
+                user?.displayName ? (
+                    <ImageUpload username={user.displayName} />
+                ) : (
+                        <h3>Please Login...</h3>
+                    )
             }
         </div>
     );
